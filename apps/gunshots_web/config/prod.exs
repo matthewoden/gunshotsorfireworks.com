@@ -57,6 +57,4 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 config :gunshots_web, GunshotsWeb.Endpoint,
-  secret_key_base:  System.get_env("GUNSHOTS_KEY_BASE"),
-
-import_config "prod.secret.exs"
+  secret_key_base:  System.get_env("GUNSHOTS_KEY_BASE")
