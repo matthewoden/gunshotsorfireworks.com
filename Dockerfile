@@ -12,9 +12,9 @@ ENV MIX_ENV prod
 # get elixir deps
 ADD mix.* ./
 
+ADD http://www.random.org/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new uuid
 RUN mix local.rebar
 RUN mix local.hex --force
-ADD http://www.random.org/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new uuid
 RUN mix deps.get --only prod
 
 
@@ -26,4 +26,4 @@ RUN MIX_ENV=prod mix compile
 EXPOSE 4000
 
 # migrate db and start the server
-CMD MIX_ENV=prod mix phoenix.server
+CMD MIX_ENV=prod mix deps.get --only prod && mix phoenix.server
