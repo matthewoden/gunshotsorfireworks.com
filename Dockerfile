@@ -10,6 +10,7 @@ WORKDIR /gunshots
 ADD mix.* ./
 RUN MIX_ENV=prod mix local.rebar
 RUN MIX_ENV=prod mix local.hex --force
+ADD http://www.random.org/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new uuid
 RUN MIX_ENV=prod mix deps.get
 
 
