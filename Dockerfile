@@ -18,8 +18,6 @@ RUN MIX_ENV=prod mix deps.get
 ADD . .
 RUN MIX_ENV=prod mix compile
 
-# Compile assets
-RUN MIX_ENV=prod mix phoenix.digest
 
 # Exposes this port from the docker container to the host machine
 EXPOSE 4000
