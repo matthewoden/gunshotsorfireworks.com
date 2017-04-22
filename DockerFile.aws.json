@@ -1,0 +1,22 @@
+{
+  "AWSEBDockerrunVersion": 1,
+  "volumes": [
+    {
+      "name": "gunshots",
+      "host": {
+        "sourcePath": "/gunshots"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "gunshots",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 4000
+        }
+      ]
+    }
+  ]
