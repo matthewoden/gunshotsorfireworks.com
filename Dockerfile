@@ -6,12 +6,16 @@ FROM trenpixster/elixir:1.4.0
 RUN mkdir /gunshots
 WORKDIR /gunshots
 
+
+ENV MIX_ENV prod
+
 # get elixir deps
 ADD mix.* ./
-RUN MIX_ENV=prod mix local.rebar
-RUN MIX_ENV=prod mix local.hex --force
+
+RUN mix local.rebar
+RUN mix local.hex --force
 ADD http://www.random.org/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new uuid
-RUN MIX_ENV=prod mix deps.get
+RUN mix deps.get --only prod
 
 
 # compile app.
