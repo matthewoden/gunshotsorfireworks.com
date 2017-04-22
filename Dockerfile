@@ -2,28 +2,27 @@
 FROM trenpixster/elixir:1.4.0
 
 
-# create working directory.
-RUN mkdir /gunshots
-WORKDIR /gunshots
-
-
 ENV MIX_ENV prod
 
-# get elixir deps
+# Compile app
+RUN mkdir /app
+WORKDIR /app
+
+# Install Elixir Deps
 ADD mix.* ./
+RUN MIX_ENV=prod mix local.rebar
+RUN MIX_ENV=prod mix local.hex --force
+RUN MIX_ENV=prod mix deps.get
 
-ADD http://www.random.org/strings/?num=10&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new uuid
-RUN mix local.rebar
-RUN mix local.hex --force
-RUN mix deps.get --only prod
-
-
-# compile app.
+# Install app
 ADD . .
 RUN MIX_ENV=prod mix compile
 
-# expose port to host machine
+# Compile assets
+RUN MIX_ENV=prod mix phoenix.digest
+
+# Exposes this port from the docker container to the host machine
 EXPOSE 4000
 
-# migrate db and start the server
-CMD MIX_ENV=prod mix deps.get --only prod && mix phoenix.server
+# The command to run when this image starts up
+CMD  MIX_ENV=prod mix phoenix.server

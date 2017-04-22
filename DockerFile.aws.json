@@ -2,15 +2,15 @@
   "AWSEBDockerrunVersion": 1,
   "volumes": [
     {
-      "name": "gunshots",
+      "name": "elixir-app",
       "host": {
-        "sourcePath": "/gunshots"
+        "sourcePath": "/app"
       }
     }
   ],
   "containerDefinitions": [
     {
-      "name": "gunshots",
+      "name": "elixir-app",
       "essential": true,
       "portMappings": [
         {
