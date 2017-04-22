@@ -1,0 +1,10 @@
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore
+
+/deps
+/_build
+erl_crash.dump
+/priv/static/*
+/uploads/files/*
