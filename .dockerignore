@@ -10,9 +10,6 @@
 # If you run "mix test --cover", coverage assets end up here.
 /cover
 
-# The directory Mix downloads your dependencies sources to.
-/deps
-
 # Where 3rd-party dependencies like ExDoc output generated docs.
 /doc
 
@@ -25,7 +22,7 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
-/deps
+/deps/*
 _build
 ecl_crash.dump
 apps/gunshots_web/priv/static/*
