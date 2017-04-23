@@ -13,7 +13,11 @@ use Mix.Config
 # which you typically run after static files are built.
 config :gunshots_web, GunshotsWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80]
+  url: [host: "localhost", port: {:system, :port}],
+  server: true,
+  root: ".",
+  version: Mix.Project.config[:version]
+
 # Do not print debug messages in production
 config :logger, level: :info
 

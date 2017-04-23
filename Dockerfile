@@ -1,24 +1,14 @@
-# Grab elixir
 FROM trenpixster/elixir:1.4.0
 
-ENV MIX_ENV prod
 
-# Compile app
-RUN mkdir /app
-WORKDIR /app
+ENV APP="gunshots" \
+    VERSION="0.1.0" \
+    PORT=4000
 
-# Install Elixir Deps
-ADD mix.* ./
-RUN mix do local.rebar, local.hex --force
-RUN mix deps.get
+RUN mkdir -p /otp/$APP/log/
 
-# Install app
-ADD . .
-RUN mix do compile
+ADD _build/prod/rel/$APP/releases/$VERSION/$APP.tar.gz /otp/$APP/
 
-
-# Exposes this port from the docker container to the host machine
 EXPOSE 4000
 
-# The command to run when this image starts up
-CMD ["mix", "phoenix.server"]
+CMD otp/$APP/bin/$APP foreground

@@ -23,7 +23,7 @@ erl_crash.dump
 *.ez
 
 /deps/*
-_build
+
 ecl_crash.dump
 apps/gunshots_web/priv/static/*
 apps/gunshots_web/uploads/files/*
