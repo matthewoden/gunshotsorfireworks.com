@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :gunshots_web, GunshotsWeb.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "localhost", port: {:system, :port}],
+  url: [host: "localhost", port: {:system, "PORT"}],
   server: true,
   root: ".",
   version: Mix.Project.config[:version]
@@ -60,5 +60,4 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-config :gunshots_web, GunshotsWeb.Endpoint,
-  secret_key_base:  System.get_env("GUNSHOTS_KEY_BASE")
+import_config "prod.secret.exs"

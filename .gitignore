@@ -25,3 +25,4 @@ erl_crash.dump
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+prod.secret.exs

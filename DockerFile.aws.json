@@ -1,13 +1,6 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "volumes": [
-    {
-      "name": "elixir-app",
-      "host": {
-        "sourcePath": "/app"
-      }
-    }
-  ],
+  "volumes": [],
   "containerDefinitions": [
     {
       "name": "elixir-app",
