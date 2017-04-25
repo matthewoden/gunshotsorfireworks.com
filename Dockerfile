@@ -5,6 +5,7 @@ ENV APP="gunshots" \
     VERSION="0.1.0" \
     PORT=4000
 
+RUN ls
 RUN mkdir -p /otp/$APP/log/
 
 ADD _build/prod/rel/$APP/releases/$VERSION/$APP.tar.gz /otp/$APP/
