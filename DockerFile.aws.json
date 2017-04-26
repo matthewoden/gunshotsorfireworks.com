@@ -1,6 +1,5 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "volumes": [],
+  "AWSEBDockerrunVersion": 1,
   "containerDefinitions": [
     {
       "name": "elixir-app",
