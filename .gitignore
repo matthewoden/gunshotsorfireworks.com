@@ -26,4 +26,6 @@ erl_crash.dump
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 prod.secret.exs
-.cert
+.pem
+.crt
+.ebextensions/*

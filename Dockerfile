@@ -7,7 +7,7 @@ RUN apk update && \
       nodejs python && \
     rm -rf /var/cache/apk/*
 
-EXPOSE 443
+EXPOSE 4000
 
 ENV APP=gunshots \
     VERSION=0.1.0 \
@@ -16,8 +16,6 @@ ENV APP=gunshots \
     CERT_PATH=priv/cert.pem \
     KEY_PATH=priv/keyfile.key\
     CACERT_PATH=priv/cacert.crt
-
-RUN mkdir /.cert
 
 
 # Cache elixir deps
