@@ -7,7 +7,6 @@ RUN apk update && \
       nodejs python && \
     rm -rf /var/cache/apk/*
 
-EXPOSE 4000
 EXPOSE 443
 
 ENV APP=gunshots \
