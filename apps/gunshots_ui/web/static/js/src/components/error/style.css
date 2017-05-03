@@ -1,0 +1,53 @@
+.Error {
+  position: absolute;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+  overflow-y: hidden;
+}
+
+.Error-inner {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  font-size: 1.5em;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  background: white;
+}
+
+.text {
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+
+.Error-enter {
+ opacity: 0.01;
+}
+
+.Error-enter.Error-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}
+
+.Error-leave {
+  opacity: 1;
+}
+
+.Error-leave.Error-leave-active {
+  opacity: 0.01;
+  transition: all 250ms ease-in-out;
+}
+
+
+@media (min-width: 768px) {
+  .Error-inner {
+    height: 500px;
+    padding: 0;
+  }
+}

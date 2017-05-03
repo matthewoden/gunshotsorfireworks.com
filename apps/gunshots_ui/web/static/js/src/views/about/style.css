@@ -1,0 +1,30 @@
+.About {
+  text-align: left;
+  width:  800px;
+  padding: 50px 15px;
+  margin: 0 auto;
+}
+
+.About a {
+  color: #F44336;
+  text-decoration: none;
+}
+
+.About-event-table table {
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.About-event-table tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.About-event-table th {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.25em;
+}
+
+.About-event-table td,
+.About-event-table th {
+  padding: 15px;
+}

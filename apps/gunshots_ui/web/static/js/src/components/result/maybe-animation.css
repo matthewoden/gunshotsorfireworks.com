@@ -1,0 +1,20 @@
+.Maybe-enter {
+  opacity: 0;
+
+}
+
+.Maybe-enter.Maybe-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+
+}
+
+.Maybe-leave {
+  opacity: 0;
+
+}
+
+.Maybe-leave.Maybe-leave-active {
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}

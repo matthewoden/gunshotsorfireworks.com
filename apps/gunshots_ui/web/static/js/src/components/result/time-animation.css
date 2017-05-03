@@ -1,0 +1,28 @@
+.Time-item {
+  padding: 10px;
+  margin: auto;
+  padding: 10x;
+  border-radius: 3px;
+  font-style:normal;
+  text-transform: none;
+}
+
+
+.Time-enter {
+  opacity: 0;
+}
+
+.Time-enter.Time-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}
+
+.Time-leave {
+  opacity: 0;
+
+}
+
+.Time-leave.Time-leave-active {
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}

@@ -1,0 +1,10 @@
+.Header {
+  font-family: 'Pathway Gothic One', sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+.Header-container {
+  max-width: 1024px;
+  margin: auto;
+  text-transform: uppercase;
+}

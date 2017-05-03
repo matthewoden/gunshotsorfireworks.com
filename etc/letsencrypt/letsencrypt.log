@@ -1,0 +1,33 @@
+2017-04-30 21:36:41,630:DEBUG:certbot.log:Root logging level set at 20
+2017-04-30 21:36:41,631:INFO:certbot.log:Saving debug log to /Users/matthewoden/www/elixir/gunshots/etc/letsencrypt/letsencrypt.log
+2017-04-30 21:36:41,632:DEBUG:certbot.main:certbot version: 0.13.0
+2017-04-30 21:36:41,632:DEBUG:certbot.main:Arguments: ['--config-dir', './letsencrypt.ini', '--work-dir', './', '--logs-dir', './']
+2017-04-30 21:36:41,633:DEBUG:certbot.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#nginx,PluginEntryPoint#standalone,PluginEntryPoint#manual,PluginEntryPoint#webroot,PluginEntryPoint#apache,PluginEntryPoint#null)
+2017-04-30 21:36:41,633:DEBUG:certbot.plugins.selection:Requested authenticator None and installer None
+2017-04-30 21:36:42,380:DEBUG:certbot_apache.configurator:Apache version is 2.4.25
+2017-04-30 21:36:42,564:DEBUG:certbot.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/local/bin/certbot", line 11, in <module>
+    load_entry_point('certbot==0.13.0', 'console_scripts', 'certbot')()
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/main.py", line 755, in main
+    return config.func(config, plugins)
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/main.py", line 662, in certonly
+    installer, auth = plug_sel.choose_configurator_plugins(config, plugins, "certonly")
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/plugins/selection.py", line 189, in choose_configurator_plugins
+    authenticator = pick_authenticator(config, req_auth, plugins)
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/plugins/selection.py", line 40, in pick_authenticator
+    config, default, plugins, question, (interfaces.IAuthenticator,))
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/plugins/selection.py", line 77, in pick_plugin
+    verified.prepare()
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/plugins/disco.py", line 228, in prepare
+    return [plugin_ep.prepare() for plugin_ep in six.itervalues(self._plugins)]
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot/plugins/disco.py", line 114, in prepare
+    self._initialized.prepare()
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot_apache/configurator.py", line 198, in prepare
+    install_ssl_options_conf(self.mod_ssl_conf)
+  File "/usr/local/Cellar/certbot/0.13.0_1/libexec/lib/python2.7/site-packages/certbot_apache/configurator.py", line 1858, in install_ssl_options_conf
+    shutil.copyfile(constants.os_constant("MOD_SSL_CONF_SRC"), options_ssl)
+  File "/usr/local/opt/python/Frameworks/Python.framework/Versions/2.7/lib/python2.7/shutil.py", line 83, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 20] Not a directory: '/Users/matthewoden/www/elixir/gunshots/etc/letsencrypt/letsencrypt.ini/options-ssl-apache.conf'
+

@@ -1,0 +1,60 @@
+FROM bitwalker/alpine-erlang:6.1
+
+RUN apk update && \
+    apk --no-cache --update add libgcc libstdc++ && \
+    rm -rf /var/cache/apk/*
+
+# Install Elixir and basic build dependencies
+RUN \
+    echo "@edge http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk update && \
+    apk --no-cache --update add \
+      git make g++ \
+      nodejs python \
+      elixir@edge && \
+    rm -rf /var/cache/apk/*
+
+# Install Hex+Rebar
+RUN mix local.hex --force && \
+    mix local.rebar --force
+
+ENV HOME=/opt/app/ \
+    TERM=xterm \
+    HEX_UNSAFE_HTTPS=1 \
+    PORT=80 \
+    MIX_ENV=prod \
+    REPLACE_OS_VARS=true \
+    SHELL=/bin/sh \
+    SECRET_KEY_BASE=$SECRET_KEY_BASE\
+    APP=velocity_umbrella \
+    CACHE=2
+
+# hoo boy. disable some of this when part of jenkins, if it ever gets there.
+
+# Cache elixir deps
+COPY mix.exs mix.lock ./
+RUN mix do deps.get, deps.compile
+
+# Copy app.
+COPY . .
+
+RUN mix do compile
+#Cache node deps
+RUN cd apps/velocity_web/ && \
+    npm install && \
+    node_modules/brunch/bin/brunch b -p && \
+    mix phoenix.digest
+
+RUN mix do release --verbose --env=prod && \
+    mkdir -p /opt/$APP/log && \
+    cp _build/prod/rel/$APP/releases/0.1.0/$APP.tar.gz /opt/$APP/ && \
+    cd /opt/$APP && \
+    tar -xzf $APP.tar.gz && \
+    rm $APP.tar.gz && \
+    rm -rf /opt/app/* && \
+    chmod -R 777 /opt/app && \
+    chmod -R 777 /opt/$APP
+
+WORKDIR /opt/$APP
+
+CMD ./bin/$APP foreground

@@ -1,0 +1,17 @@
+.Overall-enter {
+  opacity: 0;
+}
+
+.Overall-enter.Overall-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+
+.Overall-leave {
+  opacity: 1;
+}
+
+.Overall-leave.Overall-leave-active {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}

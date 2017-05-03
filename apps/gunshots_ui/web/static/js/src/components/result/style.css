@@ -1,0 +1,70 @@
+.Result {
+  position: absolute;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+  overflow-y: hidden
+}
+
+.Result-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+  background: white;
+}
+
+.Result-text {
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.Result-title {
+  color: #F44336;
+  font-size: 4.5em;
+  font-weight: bold;
+  /*text-shadow: 5px 5px 0px rgba(251, 192, 45, 0.75);*/
+}
+
+.Result-probs {
+  height: 30px;
+  font-size: 1.5em;
+  color: #302c50;
+}
+
+.Result-results {
+  margin: 20px auto;
+  min-height: 255px;
+  max-width: 600px;
+}
+
+.Result-mobile-only {
+  display: block;
+}
+
+
+
+@media (min-width: 768px) {
+  .Result-mobile-only {
+    display: none;
+  }
+
+  .Result-title {
+    font-size: 10em;
+    font-weight: bold;
+  }
+  .Result-inner {
+  }
+
+  .Result-explain {
+    width: 600px;
+    padding: 20px;
+  }
+
+}

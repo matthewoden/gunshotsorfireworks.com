@@ -22,11 +22,21 @@ defmodule CallsForService do
     |> Map.update(:records, [], &filter_recent(&1))
   end
 
+  def get_all do
+    Store.get_all()
+    |> Map.update(:records, [], &sorted_by_time(&1))
+  end
+
   defp filter_recent(records) do
     records
-    #|> Stream.filter(fn (record) -> Time.happened_recently?(record.time) end)
-    |> Enum.sort(fn (a, b) -> a.time > b.time end)
+    |> Stream.filter(fn (record) -> Time.happened_recently?(record.time) end)
+    |> sorted_by_time
   end
+
+  defp sorted_by_time(records) do
+    Enum.sort(records, fn (a, b) -> a.time > b.time end)
+  end
+
 
 
   ##########################K

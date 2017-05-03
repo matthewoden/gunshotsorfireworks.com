@@ -24,13 +24,13 @@ use Mix.Releases.Config,
 environment :dev do
   set dev_mode: true
   set include_erts: false
-  set cookie: :"X48GC<s.KUt!58pA2[lnd%wCTT|92cDe`nK$1_U|TqiK<[&Do`M~sXPuJ<T,YJ[O"
+  set cookie: :"}Eb0y_kxbmTkujITWi(i;Z1ah/HPj5eX2))xon&pA_UhPJ~Xd)Raq/}B|PY?F$R|"
 end
 
 environment :prod do
   set include_erts: false
   set include_src: false
-  set cookie: :"m9(]Yc.V1YBh<]w{M?hCwu/Oh_|Em(wH(a&=WB]7IvM?`l1Dw}O0!sL=4}QX:AGD"
+  set cookie: :",CeI<Yiz7wI!dMEFSKH/1Gpw|)}p&{3h%e_7:LrQFsR)?)p&c`?YA=HKdQ?7rP51"
 end
 
 # You may define one or more releases in this file.
@@ -44,7 +44,7 @@ release :gunshots do
     :runtime_tools,
     cfs: :permanent,
     cron: :permanent,
-    gunshots_web: :permanent
+    gunshots_ui: :permanent
   ]
 end
 
