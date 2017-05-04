@@ -20,11 +20,22 @@
 }
 
 .About-event-table th {
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 1.25em;
+  font-size: 1em;
+  font-weight: 800;
+  font-style:italic
 }
 
 .About-event-table td,
 .About-event-table th {
   padding: 15px;
+}
+
+
+@media (min-width:1024px) {
+
+  .About-event-table th {
+    font-size: 1.25em;
+    font-weight: 800;
+  }
+
 }

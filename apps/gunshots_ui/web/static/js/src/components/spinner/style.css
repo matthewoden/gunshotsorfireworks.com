@@ -5,27 +5,34 @@
   margin: auto;
   flex-direction: column;
   position: relative;
+  width: 250px
 }
 
 .Spinner-text {
-  position: absolute;
-  margin-top: 70px;
+  position: relative;
   color: #333;
   opacity: 0.6;
-  width: 200px;
   text-align: center;
-
-  font-family: 'Pathway Gothic One', sans-serif;
+  left: 0;
+  right: 0;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-weight: 400;
+  font-style: italic;
   font-size: 1.3em;
-  font-weight: bold;
   text-transform: uppercase;
+
 }
 
 .Spinner-icon {
+  padding-bottom: 24px;
   width: 36px;
   height: 36px;
   margin: auto;
   position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   z-index: 1
 }
 

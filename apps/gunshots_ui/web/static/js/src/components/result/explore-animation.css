@@ -1,7 +1,7 @@
 .Explore-item {
-  width: 200px;
+  max-width: 280px;
   margin: 20px auto;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-style:normal;
   text-transform: uppercase;
 
@@ -10,7 +10,7 @@
 .Explore-item a {
   display: block;
   color: #F44336;
-  width: 200px;
+  width: 100%;
   line-height: 50px;
   height: 50px;
   border: 1px solid #F44336;

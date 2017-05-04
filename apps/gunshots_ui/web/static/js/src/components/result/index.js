@@ -27,7 +27,6 @@ class Result extends Component {
   }
 
   render() {
-    console.log(this.props)
     const resultType = coerceResult(this.props.gunshots.length > 0)
     const results = this.props.records ? this.props.records.filter(({recent}) => recent) : []
     const time = moment(this.props.lastFetched);

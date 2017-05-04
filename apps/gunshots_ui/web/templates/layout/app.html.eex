@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Crowdsourcing the answer to 'Hey, what's that sound?'">
     <meta name="author" content="Matthew Oden Potter">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pathway+Gothic+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,400i,800,800i;" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <title>Gunshots or Fireworks?</title>
   </head>

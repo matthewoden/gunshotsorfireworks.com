@@ -12,6 +12,7 @@ class Outcome extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <main className="Home">
         <ErrorDisplay errors={ this.props.errors} />
@@ -27,9 +28,9 @@ Outcome.defaultProps = {
 }
 
 const mapStateToProps= ({ location, records}) => ({
-    errors: [location.error, records.error],
-    location,
-    records,
-  })
+  errors: [location.error, records.error].filter(item => item),
+  location,
+  records,
+})
 
 export default connect(mapStateToProps)(Outcome);

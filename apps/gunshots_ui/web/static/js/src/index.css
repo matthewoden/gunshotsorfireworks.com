@@ -53,7 +53,8 @@ body,
 */
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   color: #302c50;
   background: white;
@@ -61,10 +62,12 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
-@media (min-width:1024px) {
+@media (min-width:768px) {
   .mobile-only {
     display: none;
   }

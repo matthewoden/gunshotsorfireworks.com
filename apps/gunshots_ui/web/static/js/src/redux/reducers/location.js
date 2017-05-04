@@ -38,6 +38,7 @@ export default function locationReducer (state = initialState(), action) {
         isFetching: true
       }
     case actions.LOCATION_FETCHED:
+
       return {
         ...state,
         isFetching: false,

@@ -23,6 +23,8 @@ const recordsReducer = (state = initialState, action) => {
       }
 
     case actions.RECORDS_FETCHED:
+    case actions.FETCH_RECORDS_FAILED:
+
       return {
         ...state,
         isFetching: false,
@@ -39,7 +41,6 @@ const recordsReducer = (state = initialState, action) => {
         error: "Sorry, we were unable to fetch reports near your location."
       }
 
-
     default:
       return state
 
@@ -47,3 +48,4 @@ const recordsReducer = (state = initialState, action) => {
 }
 
 export default recordsReducer
+

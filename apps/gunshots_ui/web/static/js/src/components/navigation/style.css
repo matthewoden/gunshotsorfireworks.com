@@ -23,6 +23,7 @@
   font-style: italic;
   text-decoration: none;
   color: inherit;
+  font-weight: 800;
 }
 
 .Navigation-menu-header {
@@ -74,6 +75,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 25px 0 25px;
+    color: #86849a;
   }
 
 

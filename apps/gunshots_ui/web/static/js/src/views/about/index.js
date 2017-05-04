@@ -43,16 +43,16 @@ class About extends Component {
         <h1>About</h1>
         <p>
           St. Louis is <a href="http://www.slmpd.org/crimestats/CRM0013-BY_201703.pdf" target="_blank">no stranger to gun crime</a>. In 2017, 508 people had either been shot (or shot at) by April.</p>
-        <p>At the same time, it's also a city filled with character. With such an amazing mix of communities and cultures, there's a huge number of festivals and events all year round. It's not unusual to walk along Forest Park, and end up spotting a fireworks display.
+        <p>It's also a city filled with character. When you have an amazing mix of communities and cultures, there's a huge number of festivals and events all year round. On any given night, it's not unusual to walk along Forest Park, and end up spotting a fireworks display.
         </p>
         <p>
-          As a resident, this means that sometimes you'll hear a bang off in the distance and wonder, "...Gunshots? Or fireworks?"
+          If you're like me, then sometimes you'll hear a bang off in the distance and wonder, "...Gunshots? Or fireworks?"
         </p>
         <h2>Crowdsourcing the Answer</h2>
-        <p>This site doesn't determine whether or not any given sound was actually gunfire. Instead, it checks to see if anyone <em>thinks</em> they heard gunfire.
+        <p>Think of this site as a specialized police scanner for your current location. It doesn't determine whether or not any given sound was <em>actually</em> gunfire. Instead, it checks to see if anyone <em>thinks</em> they heard gunfire, by checking in on reports to the Police.
         </p>
         <p>
-          Crowdsourcing is made possible through SLMPD's feed of active <a href="http://www.slmpd.org/cfs.shtml"> calls for service</a>. Each call comes from various sources: 911 calls, non-emergency calls, other officers, or even <a href="http://www.shotspotter.com">gunfire-detecting robots</a>. The end result is kind of like a big to-do list, with each service call being removed whenever an officer has responded to the request.
+          This is possible through SLMPD's feed of active <a href="http://www.slmpd.org/cfs.shtml"> calls for service</a>. Each call comes from various sources: 911 calls, non-emergency calls, other officers, or even <a href="http://www.shotspotter.com">gunfire-detecting robots</a>. The end result is kind of like a big to-do list, with each service call being removed whenever an officer has responded to the request.
         </p>
         <h2>Events</h2>
         <p>Each event has a location, a time, an identification number, and a specific event type. The table below lists each event type tracked, along with more information about what qualifies for each type.</p>

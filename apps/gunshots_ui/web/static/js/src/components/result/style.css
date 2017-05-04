@@ -1,10 +1,10 @@
 .Result {
   position: absolute;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
+  /* display: flex; */
+  /* flex: 0 1 auto; */
+  /* flex-direction: column; */
+  /* align-self: center; */
+  /* justify-content: center; */
   width: 100%;
   z-index: 10;
   overflow-y: hidden
@@ -20,16 +20,15 @@
 }
 
 .Result-text {
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
   text-transform: uppercase;
   font-style: italic;
 }
 
 .Result-title {
   color: #F44336;
-  font-size: 4.5em;
-  font-weight: bold;
-  /*text-shadow: 5px 5px 0px rgba(251, 192, 45, 0.75);*/
+  font-size: 3.5em;
+  font-weight: 800;
 }
 
 .Result-probs {
@@ -56,7 +55,7 @@
   }
 
   .Result-title {
-    font-size: 10em;
+    font-size: 9em;
     font-weight: bold;
   }
   .Result-inner {

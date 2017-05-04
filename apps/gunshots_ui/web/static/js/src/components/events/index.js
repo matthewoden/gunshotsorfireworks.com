@@ -74,9 +74,10 @@ class EventMap extends Component {
                             active={this.state.activeId === item.id}
                             onMouseEnter={() => this.handleMouseEnter(item.id)}
                             onClick={() => this.revealInSidebar(item.id)}
+                            onTouchStart={() => this.revealInSidebar(item.id) }
                             lat={item.coordinates.latitude}
                             lng={item.coordinates.longitude}
-                          />))
+                            />))
                   : null
 
     const sidebarClasses = this.state.sidebarActive ? 'EventMap-sidebar--active' : ''
@@ -93,36 +94,37 @@ class EventMap extends Component {
                   <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
                 </svg>
               </div>
-                <div className="EventMap-menu-icon EventMap-menu-icon-down ">
-               <svg viewBox="0 0 24 24">
-                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-               </svg>
+              <div className="EventMap-menu-icon EventMap-menu-icon-down ">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                </svg>
               </div>
             </div>
             <div className="EventMap-item-list">
               {this.props.items.length && this.props.items.map((item) => {
-              const activeClass = this.state.activeId === item.id
-              ? 'EventMap-item--active'
-              : ''
-              return (
-              <div
-                className={`EventMap-item ${activeClass}`}
-                key={`aside-${item.id}`}
-                ref = {item.id}
-                onClick={() => this.handleSidebarSelect(item)}
-                onMouseEnter={() => this.handleMouseEnter(item.id)}
-              >
-                <div className="EventMap-item-type">{item.type}</div>
-                <div className="EventMap-item-location">@{item.location.toLowerCase()}</div>
-                <div className="EventMap-item-time">{moment(item.time).format('h:mma')} ({moment(item.time).fromNow()})</div>
-                <div className="EventMap-item-id">{item.id}</div>
+                 const activeClass = this.state.activeId === item.id
+                                   ? 'EventMap-item--active'
+                                   : ''
+                 return (
+                   <div
+                     className={`EventMap-item ${activeClass}`}
+                     key={`aside-${item.id}`}
+                     ref = {item.id}
+                     onClick={() => this.handleSidebarSelect(item)}
+                     onTouchStart={() =>  this.handleSidebarSelect(item)}
+                     onMouseEnter={() => this.handleMouseEnter(item.id)}
+                   >
+                     <div className="EventMap-item-type">{item.type}</div>
+                     <div className="EventMap-item-location">@{item.location.toLowerCase()}</div>
+                     <div className="EventMap-item-time">{moment(item.time).format('h:mma')} ({moment(item.time).fromNow()})</div>
+                     <div className="EventMap-item-id">{item.id}</div>
 
-              </div>
-              )
-             })
-            }
+                   </div>
+                 )
+              })
+              }
             {!this.props.items.length > 1 && (
-              <div className="EventMap-item">No records available.</div>
+               <div className="EventMap-item">No records available.</div>
             )}
             </div>
 
