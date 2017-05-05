@@ -12,11 +12,12 @@ class Outcome extends Component {
   }
 
   render() {
-    console.log(this.props)
+
+
     return (
       <main className="Home">
         <ErrorDisplay errors={ this.props.errors} />
-        {!this.props.errors.length && <Spinner/> }
+        { this.props.isLoading &&  <Spinner/> }
         { this.props.location.position ?  <Result /> : null }
       </main>
     );
@@ -27,10 +28,13 @@ Outcome.defaultProps = {
   errors: []
 }
 
-const mapStateToProps= ({ location, records}) => ({
-  errors: [location.error, records.error].filter(item => item),
-  location,
-  records,
-})
+//TODO refactor to be more dry WRT maps
+const mapStateToProps= ({ location, records}) => {
+  const {position} = location
+  const errors = [location.error, records.error].filter(item => item)
+  const isLoading = !(errors.length || location.position)
+
+  return { isLoading, errors, location, records }
+}
 
 export default connect(mapStateToProps)(Outcome);

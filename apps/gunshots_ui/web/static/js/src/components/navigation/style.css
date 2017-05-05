@@ -63,6 +63,16 @@
   color: inherit;
 }
 
+.Navigation-twitter-icon {
+  width:29px;
+  height: 29px;
+}
+
+.Navigation-twitter-icon path {
+  fill: #222;
+
+}
+
 .Navigation-item:last-child {
   border-bottom: 0px;
 }
@@ -89,6 +99,11 @@
     border: none;
   }
 
+  .Navigation-item:hover,
+  .Navigation-brand:hover {
+    color: #6b697b
+  }
+
   .Navigation-menu-icon {
     display: none;
   }
@@ -107,6 +122,14 @@
     display: inline-block;
   }
 
+
+  .Navigation-twitter-icon path {
+    fill: #86849a;
+  }
+
+  .Navigation-twitter-icon:hover path {
+    fill: #6b697b;
+  }
 
   .Navigation-left {
     margin-right:auto;

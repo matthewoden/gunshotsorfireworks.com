@@ -101,7 +101,7 @@ class EventMap extends Component {
               </div>
             </div>
             <div className="EventMap-item-list">
-              {this.props.items.length && this.props.items.map((item) => {
+              {this.props.items.length > 0 && this.props.items.map((item) => {
                  const activeClass = this.state.activeId === item.id
                                    ? 'EventMap-item--active'
                                    : ''
@@ -123,7 +123,7 @@ class EventMap extends Component {
                  )
               })
               }
-            {!this.props.items.length > 1 && (
+            {this.props.items.length < 1 && (
                <div className="EventMap-item">No records available.</div>
             )}
             </div>
