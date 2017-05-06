@@ -37,11 +37,14 @@ class EventMap extends Component {
   }
 
   handleMouseEnter(item) {
-    this.setState({ activeId: item.id })
+    console.log(window.innerWidth)
+    if (window.innerWidth > 1024) {
+      this.setState({ activeId: item.id })
+    }
   }
 
   handleSidebarSelect(item) {
-    this.setState({ sidebarActive: false })
+    this.setState({ sidebarActive: false, activeId: item.id })
     this.revealOnMap(item.coordinates)
   }
 
@@ -109,8 +112,8 @@ class EventMap extends Component {
                      className={`EventMap-item ${activeClass}`}
                      key={`aside-${item.id}`}
                      ref = {item.id}
-                     onMouseUp={() => this.handleMouseEnter(item)}
-                     onClick={() => this.handleSidebarSelect(item)}
+                     onMouseEnter={() => this.handleMouseEnter(item)}
+                     onMouseUp={() => this.handleSidebarSelect(item)}
                    >
                      <div className="EventMap-item-type">{item.type}</div>
                      <div className="EventMap-item-location">@{item.location.toLowerCase()}</div>
