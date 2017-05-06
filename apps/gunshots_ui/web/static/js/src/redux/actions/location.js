@@ -25,7 +25,7 @@ function locationPromise () {
       const geoFailure = (error) => reject(error)
 
       const geoOptions = {
-        enableHighAccuracy: false,
+        enableHighAccuracy: true,
         maximumAge        : 30000,
         timeout           : 27000
       }
