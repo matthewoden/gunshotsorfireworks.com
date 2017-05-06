@@ -1,6 +1,9 @@
 .Spinner {
   margin: auto;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 250px;
   margin-top:200px;
 }
