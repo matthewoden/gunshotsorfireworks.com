@@ -15,8 +15,8 @@ class MapView extends Component {
     return (
       <main className="Home">
         <ErrorDisplay errors={ this.props.errors } />
-        { this.props.isLoading && <Spinner/> }
-        { this.props.position ? <EventMap {...this.props.records} /> : null }
+        { !this.props.errors.length && <Spinner/> }
+        { this.props.location.position ? <EventMap {...this.props.records} /> : null }
       </main>
     );
   }
@@ -28,11 +28,8 @@ MapView.defaultProps = {
 
 //TODO refactor to be more dry WRT outcome
 const mapStateToProps= ({ location, records}) => {
-  const {position} = location
   const errors = [location.error, records.error].filter(item => item)
-  const isLoading = !(errors.length || position)
-
-  return { position, errors, position, records }
+  return { errors, location, records }
 }
 
 export default connect(mapStateToProps)(MapView);

@@ -17,7 +17,7 @@ class Outcome extends Component {
     return (
       <main className="Home">
         <ErrorDisplay errors={ this.props.errors} />
-        { this.props.isLoading &&  <Spinner/> }
+        { !this.props.error.length &&  <Spinner/> }
         { this.props.location.position ?  <Result /> : null }
       </main>
     );
@@ -30,11 +30,9 @@ Outcome.defaultProps = {
 
 //TODO refactor to be more dry WRT maps
 const mapStateToProps= ({ location, records}) => {
-  const {position} = location
   const errors = [location.error, records.error].filter(item => item)
-  const isLoading = !(errors.length || location.position)
 
-  return { isLoading, errors, location, records }
+  return { errors, location, records }
 }
 
 export default connect(mapStateToProps)(Outcome);
