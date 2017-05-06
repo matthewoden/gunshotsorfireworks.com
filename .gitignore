@@ -29,3 +29,5 @@ prod.secret.exs
 .pem
 .crt
 .ebextensions/*
+
+.#*
