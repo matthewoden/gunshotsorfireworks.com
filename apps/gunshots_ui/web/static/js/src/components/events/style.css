@@ -1,9 +1,9 @@
 .EventMap {
   position: relative;
-  height: calc(100% - 80px);
   width: 100%;
   z-index: 10;
   margin: auto;
+  height: 100%;
 }
 
 .EventMap-inner {
@@ -12,6 +12,7 @@
   overflow: hidden;
   height: 100%;
   display: block;
+  overflow: hidden;
 }
 
 

@@ -18,8 +18,12 @@ body,
   height: 100%; /* needed for proper layout */
 }
 
-.App, .Main {
+.App {
   height: 100%;
+}
+
+.Main {
+  height: calc(100% - 81px)
 }
 
 

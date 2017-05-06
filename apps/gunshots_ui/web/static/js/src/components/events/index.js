@@ -73,7 +73,7 @@ class EventMap extends Component {
                             {...item}
                             active={this.state.activeId === item.id}
                             onMouseEnter={() => this.handleMouseEnter(item)}
-                            onClick={() => this.revealInSidebar(item)}
+                            onMouseUp={() => this.revealInSidebar(item)}
                             lat={item.coordinates.latitude}
                             lng={item.coordinates.longitude}
                             />))
@@ -109,7 +109,7 @@ class EventMap extends Component {
                      className={`EventMap-item ${activeClass}`}
                      key={`aside-${item.id}`}
                      ref = {item.id}
-                     onMouseEnter={() => this.handleMouseEnter(item)}
+                     onMouseUp={() => this.handleMouseEnter(item)}
                      onClick={() => this.handleSidebarSelect(item)}
                    >
                      <div className="EventMap-item-type">{item.type}</div>
