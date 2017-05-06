@@ -41,12 +41,11 @@ export default function locationReducer (state = initialState(), action) {
 
     case actions.LOCATION_FETCHED:
 
-
       return {
         ...state,
         isFetching: false,
         didInvalidate: false,
-        position: action.position || {},
+        position: action.position,
         expires: action.expires,
         isValid: action.isValid
       }

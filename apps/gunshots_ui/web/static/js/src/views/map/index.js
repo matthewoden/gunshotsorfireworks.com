@@ -16,7 +16,7 @@ class MapView extends Component {
       <main className="Home">
         <ErrorDisplay errors={ this.props.errors } />
         { this.props.isLoading && <Spinner/> }
-        { this.props.position ? <EventMap {...this.props.records}/> : null }
+        { this.props.position ? <EventMap {...this.props.records} /> : null }
       </main>
     );
   }
@@ -32,7 +32,7 @@ const mapStateToProps= ({ location, records}) => {
   const errors = [location.error, records.error].filter(item => item)
   const isLoading = !(errors.length || position)
 
-  return { isLoading, errors, position, records }
+  return { position, errors, position, records }
 }
 
 export default connect(mapStateToProps)(MapView);
