@@ -3,6 +3,11 @@
   position: relative;
   height: 100%;
   max-height: 100%;
-  min-height: 600px;
   overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .Home {
+    min-height: 600px;
+  }
 }
