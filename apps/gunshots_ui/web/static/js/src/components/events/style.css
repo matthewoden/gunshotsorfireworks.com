@@ -34,7 +34,7 @@
 }
 
 .EventMap-sidebar--active {
-  top: 82px;
+  top: 81px;
 
 }
 
@@ -75,9 +75,7 @@
 }
 
 
-.EventMap-sidebar--active {
-  top: 70px;
-}
+
 
 .EventMap-sidebar--active .EventMap-menu-icon-up {
   display: none;
@@ -89,6 +87,7 @@
 
 .EventMap-item-list {
   width: 100%;
+  padding-bottom: 82px;
   overflow-y: auto;
 }
 
@@ -294,6 +293,9 @@
     height: 100%;
   }
 
+  .EventMap-item-list {
+    padding-bottom:0;
+  }
 
   .EventMap-item-type {
     font-size: 1.5em;
