@@ -18,9 +18,8 @@ body,
   height: 100%; /* needed for proper layout */
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
+.App, .Main {
+  height: 100%;
 }
 
 
@@ -28,25 +27,8 @@ body,
   display:none;
 }
 
-.Header {
-  flex: 0 0 auto;
-}
 
-.Main {
-  display: flex;
-  flex: 1 1 auto;
-  position: relative;/* need this to position inner content */
-  overflow-y: auto;
-  background-size: cover;
-  background-position: center center;
-  justify-content: center;
-  flex-direction: row;
 
-}
-
-.Footer {
-  flex: 0 0 auto;
-}
 
 /*
   Type

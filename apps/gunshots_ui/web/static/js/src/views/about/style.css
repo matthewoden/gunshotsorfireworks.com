@@ -1,8 +1,8 @@
 .About {
   text-align: left;
-  width:  800px;
-  padding: 25px 15px;
-  margin: 0 auto;
+  padding: 25px 15px 80px 15px;
+  height: 100%;
+  overflow: auto;
 }
 
 .About a {
@@ -32,6 +32,18 @@
 
 
 @media (min-width:1024px) {
+
+  .About {
+    width: 100%;
+    padding: 0;
+    overflow: auto;
+    height: calc(100% - 80px);
+  }
+
+  .About-inner {
+    width:800px;
+    margin: auto;
+  }
 
   .About-event-table th {
     font-size: 1.25em;

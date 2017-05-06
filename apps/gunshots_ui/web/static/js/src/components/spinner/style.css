@@ -1,11 +1,8 @@
 .Spinner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: auto;
-  flex-direction: column;
   position: relative;
-  width: 250px
+  width: 250px;
+  margin-top:200px;
 }
 
 .Spinner-text {
@@ -43,6 +40,7 @@
 .Spinner-container {
   width: 100px;
   height: 100px;
+  margin: auto;
   border-radius: 50%;
   background-color: #fff;
   position: relative;

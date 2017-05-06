@@ -33,17 +33,20 @@ export default function locationReducer (state = initialState(), action) {
   switch(action.type) {
 
     case actions.FETCH_LOCATION:
+
       return {
         ...state,
         isFetching: true
       }
+
     case actions.LOCATION_FETCHED:
+
 
       return {
         ...state,
         isFetching: false,
         didInvalidate: false,
-        position: action.position,
+        position: action.position || {},
         expires: action.expires,
         isValid: action.isValid
       }
@@ -52,7 +55,7 @@ export default function locationReducer (state = initialState(), action) {
         ...state,
         isFetching: false,
         didInvalidate: false,
-        error: "Sorry, we were unable to fetch your location."
+        error: "Sorry, we were unable to fetch your location. Please make sure geolocation is enabled."
       }
 
     default:

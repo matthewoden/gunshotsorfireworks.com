@@ -9,7 +9,6 @@ import {EventMarker, UserMarker} from './eventIcon'
 const API_KEY = 'AIzaSyAyv9Y3B9BlvfkzwAzL9Kgz3ZYeZrRjOPs'
 
 const options = {
-  backgroundColor: '#FFFFFF',
   styles: [{"elementType":"geometry","stylers":[{"color":"#f5f5f5"}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#f5f5f5"}]},{"featureType":"administrative.land_parcel","elementType":"labels.text.fill","stylers":[{"color":"#bdbdbd"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#757575"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#dadada"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#616161"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#e5e5e5"}]},{"featureType":"transit.station","elementType":"geometry","stylers":[{"color":"#eeeeee"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#c9c9c9"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#9e9e9e"}]}]
 }
 
@@ -37,8 +36,8 @@ class EventMap extends Component {
     this.props.dispatch(actions.fetchRecordsIfNeeded('all'))
   }
 
-  handleMouseEnter(id) {
-    this.setState({ activeId: id })
+  handleMouseEnter(item) {
+    this.setState({ activeId: item.id })
   }
 
   handleSidebarSelect(item) {
@@ -49,6 +48,7 @@ class EventMap extends Component {
   toggleSidebar() {
     this.setState({ sidebarActive: !this.state.sidebarActive })
   }
+
   revealOnMap({latitude, longitude}) {
     const center = {lat: latitude, lng: longitude}
     this.setState({ center })
@@ -72,9 +72,8 @@ class EventMap extends Component {
                             key={item.id}
                             {...item}
                             active={this.state.activeId === item.id}
-                            onMouseEnter={() => this.handleMouseEnter(item.id)}
-                            onClick={() => this.revealInSidebar(item.id)}
-                            onTouchStart={() => this.revealInSidebar(item.id) }
+                            onMouseEnter={() => this.handleMouseEnter(item)}
+                            onClick={() => this.revealInSidebar(item)}
                             lat={item.coordinates.latitude}
                             lng={item.coordinates.longitude}
                             />))
@@ -110,9 +109,8 @@ class EventMap extends Component {
                      className={`EventMap-item ${activeClass}`}
                      key={`aside-${item.id}`}
                      ref = {item.id}
+                     onMouseEnter={() => this.handleMouseEnter(item)}
                      onClick={() => this.handleSidebarSelect(item)}
-                     onTouchStart={() =>  this.handleSidebarSelect(item)}
-                     onMouseEnter={() => this.handleMouseEnter(item.id)}
                    >
                      <div className="EventMap-item-type">{item.type}</div>
                      <div className="EventMap-item-location">@{item.location.toLowerCase()}</div>
@@ -123,9 +121,9 @@ class EventMap extends Component {
                  )
               })
               }
-            {this.props.items.length < 1 && (
-               <div className="EventMap-item">No records available.</div>
-            )}
+              {this.props.items.length < 1 && (
+                 <div className="EventMap-item">No records available.</div>
+              )}
             </div>
 
           </aside>

@@ -40,6 +40,7 @@ class About extends Component {
 
     return (
       <main className="About">
+        <div className="About-inner">
         <h1>About</h1>
         <p>
           St. Louis is <a href="http://www.slmpd.org/crimestats/CRM0013-BY_201703.pdf" target="_blank">no stranger to gun crime</a>. In 2017, 508 people had either been shot (or shot at) by April.</p>
@@ -76,6 +77,7 @@ class About extends Component {
               ))}
             </tbody>
           </table>
+        </div>
         </div>
 
       </main>

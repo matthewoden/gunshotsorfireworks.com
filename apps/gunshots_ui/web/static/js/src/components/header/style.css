@@ -1,10 +1,22 @@
 .Header {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   border-top: 1px solid #eee;
+  width: 100%;
+  z-index: 200;
+  background: white;
 }
 
 .Header-container {
   max-width: 1024px;
   margin: auto;
   text-transform: uppercase;
+}
+
+
+@media (min-width: 1024px) {
+
+  .Header {
+    bottom: 0px;
+    position: fixed;
+  }
 }

@@ -23,7 +23,6 @@ const recordsReducer = (state = initialState, action) => {
       }
 
     case actions.RECORDS_FETCHED:
-    case actions.FETCH_RECORDS_FAILED:
 
       return {
         ...state,

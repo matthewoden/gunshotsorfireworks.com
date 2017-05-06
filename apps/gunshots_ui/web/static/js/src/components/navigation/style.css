@@ -1,6 +1,7 @@
 .Navigation {
   font-size: 1.5em;
   padding-top: 20px;
+  height: 61px;
 }
 
 .Navigation-menu {
@@ -11,6 +12,7 @@
   height: 100%;
   z-index: 200;
   transition: left 250ms ease-in-out;
+  top: 82px;
 }
 
 .Navigation-menu-show {
@@ -24,21 +26,20 @@
   text-decoration: none;
   color: inherit;
   font-weight: 800;
+  padding-top: 5px;
+  float: left;
 }
 
 .Navigation-menu-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  display: inline-block;
+  width: 100%;
   padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
 }
 
 .Navigation-menu-button {
   cursor: pointer;
-  display: flex;
-
+  float: left;
 }
 
 .Navigation-menu-icon  {
@@ -82,16 +83,16 @@
 
 @media (min-width: 1024px) {
   .Navigation {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    position: relative;
     padding: 20px 25px 0 25px;
     color: #86849a;
+    width: 100%;
   }
-
 
   .Navigation-brand {
     min-width: 300px;
-    text-align: left
+    text-align: left;
   }
 
   .Navigation-item {
@@ -109,17 +110,26 @@
   }
 
   .Navigation-menu {
+    left: auto;
+    top: 5px;
+    float: right;
+    width: auto;
     border-bottom: 0;
     position: relative;
-    left: auto;
-    display: flex;
-    justify-content: flex-end;
+    display: inline-block;
     background-color: transparent;
+  }
+
+  .Navigation-item {
+    display: inline-block;
+    float: left;
   }
 
   .Navigation-menu-header {
     border-bottom: 0;
     display: inline-block;
+    float: left;
+    width: auto;
   }
 
 
