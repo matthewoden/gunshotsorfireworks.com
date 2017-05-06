@@ -1,6 +1,5 @@
 .Header {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
-  border-top: 1px solid #eee;
   width: 100%;
   z-index: 200;
   background: white;
@@ -16,6 +15,7 @@
 @media (min-width: 1024px) {
 
   .Header {
+    border-top: 1px solid #eee;
     bottom: 0px;
     position: fixed;
   }

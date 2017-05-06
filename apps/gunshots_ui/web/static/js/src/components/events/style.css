@@ -3,7 +3,7 @@
   width: 100%;
   z-index: 10;
   margin: auto;
-  height: calc(100% - 82px);
+  height: calc(100% - 81px);
 }
 
 .EventMap-inner {
@@ -34,7 +34,7 @@
 }
 
 .EventMap-sidebar--active {
-  top: 81px;
+  top: 82px;
 
 }
 
