@@ -2,11 +2,13 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      joinTo: {
+        "js/app.js": [path => path.indexOf('test') === -1]
+        }
 
-      // To use a separate vendor.js bundle, specify two files path
-      // http://brunch.io/docs/config#-files-
-      // joinTo: {
+        // To use a separate vendor.js bundle, specify two files path
+        // http://brunch.io/docs/config#-files-
+        // joinTo: {
       //  "js/app.js": /^(web\/static\/js)/,
       //  "js/vendor.js": /^(web\/static\/vendor)|(deps)/
       // }
@@ -56,10 +58,17 @@ exports.config = {
       ignore: [/web\/static\/vendor/],
       presets: [ "es2015", "react" ],
       plugins: ["transform-object-rest-spread","transform-class-properties"]
-
     },
     css: {
       modules: true
+    },
+    uglify: {
+      mangle: true,
+      compress: {
+        global_defs: {
+          DEBUG: false
+        }
+      }
     }
   },
 
