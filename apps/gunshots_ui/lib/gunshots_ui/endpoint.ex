@@ -8,7 +8,7 @@ defmodule GunshotsUi.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :gunshots_ui, gzip: false,
+    at: "/", from: :gunshots_ui, gzip: true,
     only: ~w(css fonts images js favicon.ico robots.txt .well-known)
 
   # Code reloading can be explicitly enabled under the
